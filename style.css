@@ -1,0 +1,47 @@
+/* Main styling */
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    color: #333;
+    line-height: 1.6;
+    background-color: #f9f9f9;
+}
+
+/* Header styling */
+h1, h2, h3, h4 {
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+/* Luxury brand styling */
+.stApp {
+    background-color: white;
+    max-width: 1200px;
+    margin: 0 auto;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+
+/* Navigation styling */
+.css-1aumxhk {
+    background-color: white !important;
+}
+
+/* Section dividers */
+hr {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0));
+    margin: 30px 0;
+}
+
+/* Responsive design */
+@media screen and (max-width: 768px) {
+    .stApp {
+        padding: 10px;
+    }
+    .css-1aumxhk {
+        display: none;
+    }
+    .stSidebar {
+        display: none;
+    }
+}
