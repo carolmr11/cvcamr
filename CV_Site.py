@@ -1,5 +1,4 @@
 import streamlit as st
-from streamlit_option_menu import option_menu
 import base64
 from PIL import Image
 
@@ -18,20 +17,30 @@ def local_css(file_name):
 
 local_css("style.css")
 
-# Sidebar for navigation (hidden on mobile)
+# At the top of your sidebar
 with st.sidebar:
-    selected = option_menu(
-        menu_title=None,
-        options=["Profile", "Experience", "Education", "Portfolio", "Skills", "Contact"],
-        icons=["person", "briefcase", "book", "images", "award", "envelope"],
-        menu_icon="cast",
-        default_index=0,
-        styles={
-            "container": {"padding": "0!important", "background-color": "#f8f9fa"},
-            "icon": {"color": "#7a7a7a", "font-size": "14px"}, 
-            "nav-link": {"font-size": "14px", "text-align": "left", "margin":"0px", "--hover-color": "#f1f1f1"},
-            "nav-link-selected": {"background-color": "#000000"},
+    st.markdown("""
+    <style>
+        div[role="radiogroup"] > label {
+            padding: 10px 15px;
+            margin: 5px 0;
+            border-radius: 4px;
+            transition: all 0.3s;
         }
+        div[role="radiogroup"] > label:hover {
+            background: #f5f5f5;
+        }
+        div[role="radiogroup"] > label[data-baseweb="radio"] {
+            background: #FFFFFF;
+            color: white !important;
+        }
+    </style>
+    """, unsafe_allow_html=True)
+    
+    selected = st.radio(
+        "MENU",
+        ["Profile", "Experience", "Education", "Portfolio", "Skills", "Contact"],
+        label_visibility="visible"
     )
 
 # Header section
